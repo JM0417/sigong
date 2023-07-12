@@ -1,95 +1,84 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Link from "next/link"
+import { connectDB } from "@/util/database"
+// 메인 페이지
 
-export default function Home() {
+export default async function Home() {
+
+  const db = (await connectDB).db("capstone")
+  let result = await db.collection('comunity').find().toArray()
+  result.reverse()
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
+    <div>
+      <div className="banner1">
+        <h2>3D인테리어부터 시공까지</h2>
+        <h2>시공그린과 함께</h2>
+        <h2>꿈꾸는 공간을 현실로 만들어보세요</h2>
+        <Link href={'#'}>견적내기</Link>
+      </div>
+      <div className="banner2">
+        <img src={'/banner2.png'}/>
+      </div>
+      <div className="layout3">
+        <h4>시공사례</h4>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          <div className="reviewBox">
+            <img src="/review01.png"/>
+            <span>xx도 xx시 xx구 24평 / 2042만원</span>
+          </div>
+
+          <div className="reviewBox">
+            <img src="/review02.png"/>
+            <span>xx도 xx시 xx구 28평 / 3749만원</span>
+          </div>
+
+          <div className="reviewBox">
+            <img src="/review03.png"/>
+            <span>xx도 xx시 xx구 24평 / 1056만원</span>
+          </div>
+          
+          <div className="reviewBox">
+            <img src="/review04.png"/>
+            <span>xx도 xx시 xx구 28평 / 4062만원</span>
+          </div>
+
+          <div className="reviewBox">
+            <img src="/review05.png"/>
+            <span>xx도 xx시 xx구 24평 / 1968만원</span>
+          </div>
+
+          <div className="reviewBox">
+            <img src="/review06.png"/>
+            <span>xx도 xx시 xx구 28평 / 843만원</span>
+          </div>
         </div>
+        <Link href={""} className="mainPageMore">더 보기</Link>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="layout4">
+        <h4>커뮤니티</h4>
+        <div>
+          {
+            result.map((a,i)=>
+                <Link href={`comunityDetail/${result[i]._id}`} className="comunityBoxLink">
+                    <div className="comunityBox">
+                        <div className="comunityBoxIndexBox">
+                            <h4>{result[i].title}</h4>
+                            <p>{result[i].content}</p>
+                        </div>
+                        <div className="comunityBoxImageBox">
+                            <img src={"/"+result[i].image}/>
+                        </div>
+                        <div className="comunityBoxLastBox">
+                            <span>댓글 {}</span>
+                            <span>{result[i].time}</span>
+                        </div>
+                    </div>
+                </Link>
+            ).slice(0,3)
+          }
+        </div>
+        <Link href={""} className="mainPageMore">더 보기</Link>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   )
 }

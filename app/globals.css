@@ -1,107 +1,1242 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Inter';
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+body{
+  background-color: #fafafa;
+  color: #2a2a2a;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-a {
-  color: inherit;
+.linkMainPage{
+  width: 74px;
+  height: 24px;
+  display: block;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
   text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* 네비게이션 */
+
+.navbar{
+  width:100%;
+  height:80px;
+  background-color: #fafafa;
+}
+
+.navbar ul{
+  list-style-type: none;
+  float: right;
+  border-bottom: 1px solid #66645E;
+  margin-top: 20px;
+  margin-right: 30px;
+  padding: 0 10px;
+}
+.navbar li{
+  float:left;
+}
+
+.logoImg{
+  width: 60px;
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 5px;
+}
+
+.logoText{
+  width: 100px;
+  margin-top: 20px;
+}
+
+.navbar a{
+  color: #2a2a2a;
+  text-decoration: none;
+  text-align: center;
+  font-size : 18px;
+  margin-right: 50px;
+  padding: 4px;
+  font-weight: 900;
+  line-height: 50px;
+}
+
+.navbar span{
+  color: black;
+  text-align: center;
+  font-size : 18px;
+  margin-right: 50px;
+  padding: 4px;
+  font-weight: 900;
+  line-height: 50px;
+}
+
+.navbar button{
+  font-size : 18px;
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 5px 12px;
+  margin-top: 8px;
+  margin-right: 40px;
+  text-decoration: none;
+  font-weight: 900;
+  transition: 0.25s;
+  background-color: #fafafa;
+  color: #2a2a2a;
+}
+
+/* 메인 페이지 */
+.banner1{
+  width:1250px;
+  height: 200px;
+  margin: 70px auto;
+}
+
+.banner1 h2{
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #66645E;
+}
+
+.banner1 a{
+  width: 74px;
+  height: 24px;
+  display: block;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.banner2{
+  display: block;
+}
+
+.banner2 img{
+  display: block;
+  margin: auto;
+}
+
+/* 메인페이지 */
+
+.layout3{
+  width:1250px;
+  margin: auto;
+}
+
+.layout3>h4{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.reviewBox{
+  display: inline-block;
+  width: 350px;
+  margin: 30px 25px;
+}
+
+.reviewBox img{
+  width: 350px;
+}
+
+.reviewBox span{
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.layout4{
+  width:1200px;
+  margin: auto;
+}
+
+.layout4>h4{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mainPageMore{
+  width: 74px;
+  height: 24px;
+  display: block;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+
+/* 에러 페이지 */
+.errorPage{
+  text-align: center;
+}
+.errorPage h4{
+  font-size: 36px;
+  margin-top: 250px;
+}
+
+.errorPage a{
+  display: inline-block;
+  font-size: 20px;
+  text-decoration: none;
+  color: #2a2a2a;
+  border: 1px solid #2a2a2a;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 30px;
+}
+
+/* 견적내기 */
+.estimatingBox{
+  justify-content: center;
+  width: 100%;
+}
+
+.estimatingBoxLeft{
+  width: 48%;
+  padding:10px;
+}
+
+.estimatingBoxRight{
+  width: 48%;
+  padding:10px
+}
+.estimatingBox h4{
+  color: #2a2a2a;
+  text-align: center;
+  font-size: 36px;
+  padding: 20px;
+  margin: 30px auto;
+  margin-top: 30px;
+}
+
+.estimatingBox form{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-left: 30px;
+  width: 80%;
+}
+
+.estimatingBox span{
+  display: block;
+  margin:10px 0 0 10px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.estimatingBox input{
+  display: block;
+  margin:10px;
+  padding: 5px;
+  width:400px;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.estimatingBox textarea{
+  display: block;
+  margin:10px;
+  width:600px;
+  height: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.estimatingBox select{
+  display: block;
+  margin:10px;
+  width:400px;
+  font-size: 16px;
+}
+
+.estimatingBoxBtn{
+  display: block;
+  margin: auto;
+}
+
+.estimatingBox button{
+  margin: 60px;
+  width: 200px;
+  height: 30px;
+  background-color: #71A894;
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* 견적내기 완료 */
+.estimatingCompletion h4{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.estimatingCompletion img{
+  display: block;
+  width:500px;
+  margin: 100px auto;
+}
+
+.estimatingCompletion span{
+  display: block;
+  width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* 입찰현황 */
+.biddingState h4{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* 입찰 리스트 */
+
+.biddingCount{
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.biddingList{
+  display: block;
+  width: 50%;
+  padding: 10px;
+  margin: 20px auto 0 auto;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.biddingList a{
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #2a2a2a;
+  font-size: 18px;
+}
+
+.biddingListPrice{
+  display: inline-block;
+  width: 50%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.biddingListState{
+  display: inline-block;
+  text-align: right;
+  width: 50%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.biddingListName{
+  display: inline-block;
+  width: 50%;  
+  margin-top:10px;
+}
+
+.biddingListName img{
+  width:20px;
+}
+
+.biddingListRight{
+  display: inline-block;
+  text-align: right;
+  width: 50%;
+}
+
+
+/* 입찰 상세내용 */
+
+.biddingDetail>h4{
+  display: block;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 30px;
+}
+
+.biddingDetailContent{
+  display: block;
+  margin:30px auto;
+  background-color: #fffffe;
+  width:800px;
+  padding: 10px;
+}
+
+.biddingDetailContent div{
+  display: block;
+  width:500px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.biddingDetailContent div p{
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.biddingDetailContent div span{
+  display: block;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fefefe;
+}
+
+.biddingDetailName{
+  display: block;
+  margin:auto;
+  background-color: #fffffe;
+  width:800px;
+  padding: 10px;
+  position: relative;
+}
+
+.biddingDetailName img{
+  position: absolute;
+  width:50px;
+}
+
+.biddingDetailName h4{
+  margin-left: 60px;
+  margin-top: 5px;
+}
+
+.biddingDetailName div{
+  margin-left: 60px;
+  font-size: 12px;
+  color: gray;
+  margin-top: 7px;
+}
+
+.biddingDetailName div span{
+  margin-right: 10px;
+}
+
+.rightBtn{
+  position: absolute;
+  right: 30px;
+  top:30px;
+}
+
+.biddingDetailHistory{
+  display: block;
+  margin: 30px auto;
+  background-color: #fffffe;
+  width:800px;
+  padding: 10px;
+}
+
+.biddingDetailBtn{
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.biddingDetailBtn form{
+  display: inline-block;
+}
+
+.biddingDetailBtn button{
+  width: 100px;
+  height: 24px;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-right: 10px;
+}
+
+/* 회원가입 창 */
+
+.registerBox{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.registerBox form{
+  position: absolute;
+  top:25%;
+  width: 389px;
+  height: 450px;
+  border: 1px solid #CAC5BC;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 30px 0;
+}
+
+.registerBox p{
+  display: block;
+  margin:10px auto;
+  width: 300px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.registerBox select{
+  display: block;
+  margin:10px auto 20px auto;
+  width:300px;
+  height: 34px;
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.registerBox input{
+  display: block;
+  margin:10px auto 20px auto;
+  width:300px;
+  height: 34px;
+  font-size: 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.registerBox button{
+  display: block;
+  margin: 40px auto 20px auto;
+  width: 300px;
+  height: 34px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #71A894;
+  border-radius: 8px;
+  border: none;
+}
+
+/* 입찰하기 리스트 */
+.estimates{
+  padding: 10px;
+}
+
+.estimates h4{
+  color: #2a2a2a;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.estimate-list{
+  width: 1000px;
+  margin: 15px auto;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  background-color: #fffffe;
+}
+
+.estimate-list a{
+  display: block;;
+  margin: 15px 20px;
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+.estimate-list span{
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.estimateDetailBudget{
+  float: right;
+}
+
+.estimate-list p{
+  display: block;
+  border-top: 1px solid gray;
+  text-align: right;
+  padding: 10px 10px 0 0;
+  margin-top:8px
+}
+
+/* estimateDetail */
+
+
+.estimatingBox .estimatingBoxLeft div{
+  margin: 10px;
+  width: 400px;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.estimatingBox .estimatingBoxRight div{
+  margin: 10px;
+  width: 400px;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.estimatingBox .estimatingBoxRight .estimatingBoxRightContent{
+  height: 200px;
+}
+
+.estimateImage{
+  margin: 30px 0;
+}
+
+.estimateImage img{
+  display: block;
+  margin: auto;
+}
+
+.MyEstimate{
+  margin: 50px 0;
+}
+
+.MyEstimate h4{
+  color: #2a2a2a;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.MyEstimateContent{
+  width: 1000px;
+  margin: auto;
+}
+
+.MyEstimateContent span{
+  font-size: 20px;
+  font-weight: 900;
+  margin: 10px;
+}
+
+.MyEstimateContent p{
+  margin: 10px;
+  width: 500px;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.biddingPop{
+  margin: 30px;
+}
+
+.biddingPop h4{
+  color: #2a2a2a;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.biddingPopContent{
+  width: 1000px;
+  margin: auto;
+}
+
+.biddingPop span{
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 10px;
+}
+
+.biddingPop input{
+  margin: 10px;
+  width: 500px;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.biddingPop textarea{
+  margin: 10px;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.biddingPopBtn{
+  display: flex;
+  justify-content: center;
+}
+
+.biddingPop button{
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: none;
+  margin-right: 10px;
+  margin-top: 30px;
+}
+
+.biddingPop a{
+  width: 74px;
+  height: 20px;
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: none;
+  margin-top: 30px;
+}
+
+/* 채팅 */
+.chating{
+  width: 1000px;
+  margin: 50px auto;
+  border: 1px solid gray;
+  height: 1000px;
+  overflow: hidden;
+}
+
+.chating h4{
+  display: block;
+  text-align: center;
+  height: 50px;
+  background-color: white;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+  border-bottom: 1px solid gray;
+}
+
+.chatingUserData{
+  width:100%;
+  height: 70px;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  position: relative;
+}
+
+.chatingUserName{
+  position: absolute;
+  top:25px;
+  left:80px;
+  font-size: 20px;
+
+}
+.chatingUserDetail{
+  position: absolute;
+  top:25px;
+  right: 20px;
+  font-size: 20px;
+}
+
+.chatingUserDetail a{
+  color: black;
+}
+
+.chatingUserData img{
+  width:50px;
+  position: absolute;
+  top:10px;
+  left:10px;
+}
+
+.chatingArea{
+  background-color: white;
+  width: 100%;
+  height: 750px;
+  border-bottom: 1px solid gray;
+  overflow: scroll;
+}
+
+.customerChat{
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.businessChat{
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.chatingArea span{
+  max-width:400px;
+  height: auto;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.chatingInput{
+  width:100%;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  position: relative;
+}
+
+.chatingInput form{
+  width: 100%;
+  height: 80px;
+  display: block;
+  position: relative;
+}
+
+.chatingInput textarea{
+  width: 800px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;
+  position: absolute;
+  top:10px;
+  left:30px;
+}
+
+.chatingInput button{
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 14px;
+  position: absolute;
+  top:10px;
+  right:30px;
+}
+
+.chatingBtnBusiness{
+  width:100%;
+  height: 50px;
+  background-color: white;
+  display: block;
+  text-align: center;
+  padding: 8px;
+}
+
+.chatingBtnBusiness a{
+  width: 74px;
+  height: 20px;
+  display: inline-block;  
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  margin: auto;
+  padding: 2px 5px;
+}
+
+
+
+.chatingBtn{
+  width:100%;
+  height: 50px;
+  background-color: white;
+  display: block;
+  padding: 8px;
+}
+
+.chatingBtn div{
+  display: block;
+  text-align: center;
+}
+
+.chatingBtn button{
+  width: 100px;
+  height: 24px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  border: none;
+  margin: auto;
+  padding: 2px 5px;
+  margin-right: 15px;
+}
+
+.chatingBtn a{
+  width: 74px;
+  height: 20px;
+  display: inline-block;  
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  margin: auto;
+  padding: 2px 5px;
+}
+
+/* 리뷰작성 */
+
+.customerReview h4{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.customerReview img{
+  display: block;
+  width:300px;
+  margin: 50px auto;
+}
+
+.customerReview span{
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+.customerReviewForm{
+  margin: 30px auto;
+}
+
+.customerReviewForm textarea{
+  display: block;
+  width:580px;
+  height: 180px;
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px auto;
+}
+
+.customerReviewForm button{
+  width: 100px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  margin: auto;
+  padding: 2px 5px;
+}
+
+/* 커뮤니티 */
+.comunity{
+  width: 1200px;
+  height: auto;
+  margin: 30px auto;
+}
+
+.comunity h3{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.comunityBoxLink{
+  display: block;
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+.comunityBox{
+  width:1000px;
+  height: 160px;
+  border-bottom: 1px solid #2a2a2a;
+  margin: 40px auto;
+  position: relative;
+}
+
+.comunityBoxIndexBox{
+  display: block;
+  width: 600px;
+  height: 100px;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.comunityBoxIndexBox h4{
+  font-size: 24px;
+  margin-left: 30px;
+}
+
+.comunityBoxIndexBox p{
+  display: block;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.comunityBoxImageBox{
+  position: absolute;
+  width: 200px;
+  right: -30px;
+  top: 15px;
+}
+
+.comunityBoxLastBox{
+  font-size: 12px;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.comunityPageNumber{
+  width:1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.comunityPageNumber a{
+  margin-right: 5px;
+}
+
+.comunityWriteBtn{
+  width: 1000px;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.comunityWriteBtn a{
+  width: 74px;
+  height: 24px;
+  display: block;
+  margin: auto;
+  color: #2a2a2a;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid black;
+}
+
+/* 커뮤니티 작성 */
+.comunityWrite h4{
+  display: block;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.comunityInput{
+  width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+}
+
+.CWtitle{
+  width:600px;
+  height: 20px;
+  font-size: 20px;
+  padding: 5px 10px;
+  border: 1px solid #2a2a2a;
+}
+
+.CWfile{
+  width: 300px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.CWcontent{
+  width: 800px;
+  margin: 20px auto;
+  height: 400px;
+  border: 1px solid #2a2a2a;
+}
+
+.comunityInput button{
+  width: 74px;
+  height: 24px;
+  display: block;
+  text-align: center;
+  margin: 40px auto 0 auto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #71A894;
+  border-radius: 5px;
+  padding: 2px 5px;
+
+}
+
+/* 커뮤니티 디테일 */
+.comunityDetail{
+  width: 800px;
+  height: auto;
+  margin: 30px auto;  
+}
+
+.comunityDetailTitle{
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.comunityDetailTitle h4{
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.comunityDetailUser{
+  height: 50px;
+  border-bottom: 1px solid black;
+  position: relative;
+  padding-top: 20px;
+}
+
+.comunityDetailUser img{
+  position: absolute;
+  width:50px;
+  left:10px;
+  top:10px;
+}
+
+.comunityDetailUser span{
+  display: block;
+  font-size: 24px;
+  margin-left: 80px;
+}
+
+.comunityDetailContent{
+  padding: 30px;
+  border-bottom: 1px solid black;
+}
+
+.comunityDetailContent span{
+  display: block;
+  margin: 20px;
+}
+
+.comunityDetailContent img{
+  display: block;
+  margin: auto;
+  width: 300px;
+}
+
+.comunityDetailComentWrite{
+  position: relative;
+  height: 70px;
+  border-bottom: 1px solid black;
+}
+
+.comunityDetailComentWrite textarea{
+  width:610px;
+  height: 40px;
+  font-size: 16px;
+  position: absolute;
+  padding: 5px;
+  left:30px;
+  top:10px;
+}
+
+.comunityDetailComentWrite button{
+  width:100px;
+  height: 50px;
+  position: absolute;
+  right: 30px;
+  top:10px;
+}
+
+.comunityDetailComent{
+  padding: 30px;
+}
+.comunityDetailComentBox{
+  border-bottom: 1px solid black;
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+
+.comunityDetailComentBoxUser{
+  position: relative; 
+  padding: 10px;
+}
+
+.comunityDetailComentBoxUser img{
+  position: absolute;
+  width: 50px;
+}
+
+.comunityDetailComentBoxUser span{
+  display: block;
+  margin-left: 60px;
+}
+
+.comunityDetailComentBoxContent{
+  padding-left: 70px;
+  color: gray;
 }
